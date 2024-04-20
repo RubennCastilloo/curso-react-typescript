@@ -5,14 +5,23 @@ export type ActivityActions = {
     payload: {
         newActivity: Activity
     }
-}
+} 
+    | 
+{
+    type:'set-activeId',
+    payload: {
+        id: Activity['id']
+    }
+} 
 
-type ActivityState = {
+export type ActivityState = {
     activities : Activity[]
+    activeId: Activity['id']
 }
 
 export const initialState : ActivityState = {
-    activities: []
+    activities: [],
+    activeId: ''
 }
 
 export const activityReducer = (
@@ -25,6 +34,14 @@ export const activityReducer = (
         return {
             ...state,
             activities: [...state.activities, action.payload.newActivity]
+        }
+    }
+
+    if(action.type === 'set-activeId'){
+
+        return {
+            ...state,
+            activeId: action.payload.id
         }
     }
 
