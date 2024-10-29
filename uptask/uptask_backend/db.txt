@@ -1,0 +1,4 @@
+passwrod: CLT0fjY1kZGxjVsI
+user: root
+
+mongodb+srv://root:CLT0fjY1kZGxjVsI@cluster0.jdtevod.mongodb.net/
